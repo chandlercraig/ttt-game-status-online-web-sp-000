@@ -36,23 +36,6 @@ won?(board) || draw?(board)
 end
 
 
-def won_won?(board)
-  WIN_COMBINATIONS.each do |win_combo|
-    x_win = board[win_combo[0]] == "X" && board[win_combo[1]] == "X" && board[win_combo[2]] == "X"
-    o_win = board[win_combo[0]] == "O" && board[win_combo[1]] == "O" && board[win_combo[2]] == "O"
-    empty_board = board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    draw_board = !x_win && !o_win && full?(board)
-    if x_win == true
-      return true
-    elsif o_win == true
-      return true
-    elsif draw_board || empty_board
-      return nil
-    end
-  end
-end
-
-
 def winner(board)
   WIN_COMBINATIONS.each do |win_combo|
     x_win = board[win_combo[0]] == "X" && board[win_combo[1]] == "X" && board[win_combo[2]] == "X"
